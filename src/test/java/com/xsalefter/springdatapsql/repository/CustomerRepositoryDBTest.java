@@ -27,7 +27,7 @@ public class CustomerRepositoryDBTest {
 		final Customer customer = new Customer();
 		customer.setFirstName("john");
 
-		final Customer saved = this.customerRepository.save(customer);
+		final Customer saved = this.customerRepository.saveAndFlush(customer);
 		assertThat(saved, is(notNullValue()));
 		assertThat(saved.getId(), is(notNullValue()));
 		assertThat(saved.getId() > 0, is(true));
